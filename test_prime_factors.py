@@ -69,6 +69,13 @@ def test_zero_number_prime_factors():
     except ValueError:
         pass
 
+def test_one_number_prime_factors():
+    try:
+        prime_factors(1)
+        assert False, 'ValueError expected'
+    except ValueError:
+        pass
+
 
 
 from prime_factors import prime_factors
@@ -83,7 +90,8 @@ if __name__ == '__main__':
         test_three_prime_factors_power_number_prime_factors,
         test_large_prime_number_prime_factors,
         test_non_int_type_prime_factors,
-        test_zero_number_prime_factors
+        test_zero_number_prime_factors,
+        test_one_number_prime_factors
     ):
         print(f'{test.__name__}: ', end='')
         try:
