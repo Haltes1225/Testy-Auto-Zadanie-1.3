@@ -83,6 +83,12 @@ def test_negative_number_prime_factors():
     except ValueError:
         pass
 
+def test_none_prime_factors():
+    try:
+        prime_factors(None)
+        assert False, 'TypeError expected'
+    except TypeError:
+        pass
 
 
 from prime_factors import prime_factors
@@ -99,7 +105,8 @@ if __name__ == '__main__':
         test_non_int_type_prime_factors,
         test_zero_number_prime_factors,
         test_one_number_prime_factors,
-        test_negative_number_prime_factors
+        test_negative_number_prime_factors,
+        test_none_prime_factors
     ):
         print(f'{test.__name__}: ', end='')
         try:
