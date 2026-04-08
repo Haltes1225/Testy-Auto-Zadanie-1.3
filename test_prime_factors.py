@@ -5,12 +5,18 @@ def test_import_prime_factors():
     except ImportError as error:
         assert False, error
 
+def test_prime_number_prime_factors():
+    prime_number = 3
+    result = prime_factors(prime_number)
+    assert result == [prime_number], f'Expected [{prime_number}], got {result}'
+
 from prime_factors import prime_factors
 
 if __name__ == '__main__':
     for test in (
         test_import_prime_factors,
-    ):  #➜ 4
+        test_prime_number_prime_factors
+    ):
         print(f'{test.__name__}: ', end='')
         try:
             test()
