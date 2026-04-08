@@ -23,7 +23,7 @@ def test_prime_power_number_prime_factors():
 def test_semiprime_number_prime_factors():
     prime_number_1 = 3
     prime_number_2 = 17
-    test_number = floor(prime_number_1 * prime_number_2)
+    test_number = int(floor(prime_number_1 * prime_number_2))
     expected = [prime_number_1, prime_number_2]
     result = prime_factors(test_number)
     assert expected == result, f'Expected {expected}, got {result}'
@@ -33,7 +33,7 @@ def test_two_prime_factors_power_number_prime_factors():
     power_1 = 4
     prime_number_2 = 7
     power_2 = 2
-    test_number = floor(pow(prime_number_1, power_1) * pow(prime_number_2, power_2))
+    test_number = int(floor(pow(prime_number_1, power_1) * pow(prime_number_2, power_2)))
     expected = [prime_number_1 for x in range(power_1)] + [prime_number_2 for x in range(power_2)]
     result = prime_factors(test_number)
     assert expected == result, f'Expected {expected}, got {result}'
@@ -45,7 +45,7 @@ def test_three_prime_factors_power_number_prime_factors():
     power_2 = 2
     prime_number_3 = 6037
     power_3 = 3
-    test_number = floor(pow(prime_number_1, power_1) * pow(prime_number_2, power_2) * pow(prime_number_3, power_3))
+    test_number = int(floor(pow(prime_number_1, power_1) * pow(prime_number_2, power_2) * pow(prime_number_3, power_3)))
     expected = [prime_number_1 for x in range(power_1)] + [prime_number_2 for x in range(power_2)] + [prime_number_3 for x in range(power_3)]
     result = prime_factors(test_number)
     assert expected == result, f'Expected {expected}, got {result}'
