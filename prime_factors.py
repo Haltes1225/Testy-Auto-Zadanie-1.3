@@ -1,2 +1,7 @@
+from sympy import *
+
 def prime_factors(number):
-    pass
+    
+    if isprime(number):
+        result = [number]
+        return result
