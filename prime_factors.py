@@ -9,10 +9,13 @@ def validate_board(function):
         if not type_number is int:
             raise TypeError(f"number must be int type, is {type_number}")
     
-        if not number > 1:
-            raise ValueError("number must be an integer greater than 1")
-        return function(number)
+        if not number > 0:
+            raise ValueError("number must be an integer greater than 0")
 
+        if number == 1:
+            return None
+        
+        return function(number)
     return wrapper
 
 @validate_board

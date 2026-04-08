@@ -70,11 +70,8 @@ def test_zero_number_prime_factors():
         pass
 
 def test_one_number_prime_factors():
-    try:
-        prime_factors(1)
-        assert False, 'ValueError expected'
-    except ValueError:
-        pass
+    result = prime_factors(1)
+    assert result == None, f'Expected None, got {result}'
 
 def test_negative_number_prime_factors():
     try:
