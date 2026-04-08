@@ -38,6 +38,18 @@ def test_two_prime_factors_power_number_prime_factors():
     result = prime_factors(test_number)
     assert expected == result, f'Expected {expected}, got {result}'
 
+def test_three_prime_factors_power_number_prime_factors():
+    prime_number_1 = 3
+    power_1 = 4
+    prime_number_2 = 7
+    power_2 = 2
+    prime_number_3 = 6037
+    power_3 = 3
+    test_number = floor(pow(prime_number_1, power_1) * pow(prime_number_2, power_2) * pow(prime_number_3, power_3))
+    expected = [prime_number_1 for x in range(power_1)] + [prime_number_2 for x in range(power_2)] + [prime_number_3 for x in range(power_3)]
+    result = prime_factors(test_number)
+    assert expected == result, f'Expected {expected}, got {result}'
+
 
 from prime_factors import prime_factors
 
@@ -47,7 +59,8 @@ if __name__ == '__main__':
         test_prime_number_prime_factors,
         test_prime_power_number_prime_factors,
         test_semiprime_number_prime_factors,
-        test_two_prime_factors_power_number_prime_factors
+        test_two_prime_factors_power_number_prime_factors,
+        test_three_prime_factors_power_number_prime_factors
     ):
         print(f'{test.__name__}: ', end='')
         try:
