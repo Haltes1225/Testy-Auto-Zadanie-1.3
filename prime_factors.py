@@ -1,13 +1,22 @@
 from sympy import *
+from functools import wraps
 
-def prime_factors(number):
+def validate_board(function):
 
-    type_number = type(number)  
-    if not type_number is int:
-        raise TypeError(f"number must be int type, is {type_number}")
+    @wraps(function)
+    def wrapper(number):
+        type_number = type(number)  
+        if not type_number is int:
+            raise TypeError(f"number must be int type, is {type_number}")
     
-    if not number > 1:
-        raise ValueError("number must be an integer greater than 1")
+        if not number > 1:
+            raise ValueError("number must be an integer greater than 1")
+        return function(number)
+
+    return wrapper
+
+@validate_board
+def prime_factors(number):
     
     if isprime(number):
         result = [number]
@@ -26,6 +35,7 @@ def prime_factors(number):
         if number_remainder > 1:
             result.append(number_remainder)
         return result
+
         
 
    
