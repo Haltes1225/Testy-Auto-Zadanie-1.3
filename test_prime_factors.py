@@ -36,8 +36,6 @@ def test_two_prime_factors_power_number_prime_factors():
     test_number = floor(pow(prime_number_1, power_1) * pow(prime_number_2, power_2))
     expected = [prime_number_1 for x in range(power_1)] + [prime_number_2 for x in range(power_2)]
     result = prime_factors(test_number)
-    print("Expected: ", expected)
-    print("Result: ", result)
     assert expected == result, f'Expected {expected}, got {result}'
 
 
