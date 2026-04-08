@@ -50,6 +50,11 @@ def test_three_prime_factors_power_number_prime_factors():
     result = prime_factors(test_number)
     assert expected == result, f'Expected {expected}, got {result}'
 
+def test_large_prime_number_prime_factors():
+    prime_number = 19134702400093278081449423917
+    result = prime_factors(prime_number)
+    assert result == [prime_number], f'Expected [{prime_number}], got {result}'
+
 
 from prime_factors import prime_factors
 
@@ -60,7 +65,8 @@ if __name__ == '__main__':
         test_prime_power_number_prime_factors,
         test_semiprime_number_prime_factors,
         test_two_prime_factors_power_number_prime_factors,
-        test_three_prime_factors_power_number_prime_factors
+        test_three_prime_factors_power_number_prime_factors,
+        test_large_prime_number_prime_factors
     ):
         print(f'{test.__name__}: ', end='')
         try:
