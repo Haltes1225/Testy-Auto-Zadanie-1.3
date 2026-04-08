@@ -51,7 +51,7 @@ def test_three_prime_factors_power_number_prime_factors():
     assert expected == result, f'Expected {expected}, got {result}'
 
 def test_large_prime_number_prime_factors():
-    prime_number = 19134702400093278081449423917
+    prime_number = 19134702400093278081449423917 #source: https://oeis.org/A005478
     result = prime_factors(prime_number)
     assert result == [prime_number], f'Expected [{prime_number}], got {result}'
 
