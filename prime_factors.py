@@ -2,6 +2,10 @@ from sympy import *
 
 def prime_factors(number):
 
+    type_number = type(number)  
+    if not type_number is int:
+        raise TypeError(f"number must be int type, is {type_number}")
+    
     if isprime(number):
         result = [number]
         return result

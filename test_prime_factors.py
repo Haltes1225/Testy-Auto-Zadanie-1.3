@@ -55,6 +55,14 @@ def test_large_prime_number_prime_factors():
     result = prime_factors(prime_number)
     assert result == [prime_number], f'Expected [{prime_number}], got {result}'
 
+def test_non_int_type_prime_factors():
+    try:
+        prime_factors([3])
+        assert False, 'TypeError expected'
+    except TypeError:
+        pass
+
+
 
 from prime_factors import prime_factors
 
@@ -66,7 +74,8 @@ if __name__ == '__main__':
         test_semiprime_number_prime_factors,
         test_two_prime_factors_power_number_prime_factors,
         test_three_prime_factors_power_number_prime_factors,
-        test_large_prime_number_prime_factors
+        test_large_prime_number_prime_factors,
+        test_non_int_type_prime_factors
     ):
         print(f'{test.__name__}: ', end='')
         try:
