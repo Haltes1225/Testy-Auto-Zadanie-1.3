@@ -26,7 +26,6 @@ def test_semiprime_number_prime_factors():
     test_number = floor(prime_number_1 * prime_number_2)
     expected = [prime_number_1, prime_number_2]
     result = prime_factors(test_number)
-    print(result)
     assert expected == result, f'Expected {expected}, got {result}'
 
 
