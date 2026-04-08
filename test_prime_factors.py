@@ -12,7 +12,7 @@ def test_prime_number_prime_factors():
 
 def test_prime_power_number_prime_factors():
     prime_number = 3
-    power = 4
+    power = 5
     test_number = pow(prime_number, power)
     expected = [prime_number for x in range(power)]
     result = prime_factors(test_number)
