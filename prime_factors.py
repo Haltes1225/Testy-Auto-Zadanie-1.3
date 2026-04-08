@@ -6,6 +6,9 @@ def prime_factors(number):
     if not type_number is int:
         raise TypeError(f"number must be int type, is {type_number}")
     
+    if number < 1:
+        raise ValueError("number must be greater than 0")
+    
     if isprime(number):
         result = [number]
         return result
