@@ -7,10 +7,33 @@ def test_import_prime_factors():
     except ImportError as error:
         assert False, error
 
-def test_prime_number_prime_factors():
+def test_prime_number_prime_factors_2():
+    prime_number = 2
+    result = prime_factors(prime_number)
+    assert result == [prime_number], f'Expected [{prime_number}], got {result}'
+
+def test_prime_number_prime_factors_3():
     prime_number = 3
     result = prime_factors(prime_number)
     assert result == [prime_number], f'Expected [{prime_number}], got {result}'
+
+def test_prime_number_prime_factors_4():
+    prime_number = 4
+    result = prime_factors(prime_number)
+    expected = [2,2]
+    assert result == [2,2], f'Expected {expected}, got {result}'
+
+def test_prime_number_prime_factors_9():
+    prime_number = 9
+    result = prime_factors(prime_number)
+    expected = [3,3]
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_prime_number_prime_factors_6():
+    prime_number = 6
+    result = prime_factors(prime_number)
+    expected = [2,3]    
+    assert result == expected, f'Expected {expected}, got {result}'
 
 def test_prime_power_number_prime_factors():
     prime_number = 3
@@ -98,7 +121,11 @@ from prime_factors import prime_factors
 if __name__ == '__main__':
     for test in (
         test_import_prime_factors,
-        test_prime_number_prime_factors,
+        test_prime_number_prime_factors_2,
+        test_prime_number_prime_factors_3,
+        test_prime_number_prime_factors_4,
+        test_prime_number_prime_factors_9,
+        test_prime_number_prime_factors_6,                
         test_prime_power_number_prime_factors,
         test_semiprime_number_prime_factors,
         test_two_prime_factors_power_number_prime_factors,
