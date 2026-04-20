@@ -17,6 +17,31 @@ def test_is_prime_3():
     expected = True
     assert result == expected, f'Expected {expected}, got {result}'
 
+def test_is_prime_4():
+    result = is_prime(4)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_9():
+    result = is_prime(9)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6():
+    result = is_prime(6)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_5():
+    result = is_prime(3)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_25():
+    result = is_prime(25)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
 def test_import_prime_factors():
     try:
         from prime_factors import prime_factors
@@ -146,7 +171,12 @@ if __name__ == '__main__':
     for test in (
         test_import_is_prime,
         test_is_prime_2,
-        test_is_prime_3
+        test_is_prime_3,
+        test_is_prime_4,
+        test_is_prime_9,
+        test_is_prime_6,
+        test_is_prime_5,
+        test_is_prime_25
     ):
         """
         test_import_prime_factors,
