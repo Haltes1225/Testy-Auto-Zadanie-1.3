@@ -29,8 +29,12 @@ def is_prime(number):
         if number % 2 == 0 or number % 3 == 0:
             return False
         else:
+            m = 2
+            while m < number:
+                if number % m == 0:
+                    return False
+                m += 1
             return True
-
 
 @validate_number
 def prime_factors(number):
