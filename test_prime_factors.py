@@ -1,5 +1,22 @@
 from sympy import *
 
+def test_import_is_prime():
+    try:
+        from prime_factors import is_prime
+        assert callable(is_prime), "prime_factors not callable"
+    except ImportError as error:
+        assert False, error
+
+def test_is_prime_2():
+    result = is_prime(2)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_3():
+    result = is_prime(3)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
 def test_import_prime_factors():
     try:
         from prime_factors import prime_factors
@@ -123,9 +140,15 @@ def test_empty_prime_factors():
         pass
 
 from prime_factors import prime_factors
+from prime_factors import is_prime
 
 if __name__ == '__main__':
     for test in (
+        test_import_is_prime,
+        test_is_prime_2,
+        test_is_prime_3
+    ):
+        """
         test_import_prime_factors,
         test_prime_number_prime_factors_2,
         test_prime_number_prime_factors_3,
@@ -144,7 +167,7 @@ if __name__ == '__main__':
         test_negative_number_prime_factors,
         test_none_prime_factors,
         test_empty_prime_factors
-    ):
+        """
         print(f'{test.__name__}: ', end='')
         try:
             test()
