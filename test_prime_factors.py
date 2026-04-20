@@ -355,26 +355,6 @@ if __name__ == '__main__':
         test_none_prime_factors,
         test_empty_prime_factors
     ):
-        """
-        test_import_prime_factors,
-        test_prime_number_prime_factors_2,
-        test_prime_number_prime_factors_3,
-        test_prime_factors_4,
-        test_prime_factors_9,
-        test_prime_factors_6, 
-        test_non_prime_non_divisible_by_2_or_3_prime_factors,               
-        test_prime_power_number_prime_factors,
-        test_semiprime_number_prime_factors,
-        test_two_prime_factors_power_number_prime_factors,
-        test_three_prime_factors_power_number_prime_factors,
-        test_large_prime_number_prime_factors,
-        test_non_int_type_prime_factors,
-        test_zero_number_prime_factors,
-        test_one_number_prime_factors,
-        test_negative_number_prime_factors,
-        test_none_prime_factors,
-        test_empty_prime_factors
-        """
         print(f'{test.__name__}: ', end='')
         try:
             test()
