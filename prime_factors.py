@@ -1,7 +1,7 @@
-from sympy import *
 from functools import wraps
+import math
 
-def validate_board(function):
+def validate_number(function):
 
     @wraps(function)
     def wrapper(number):
@@ -18,21 +18,35 @@ def validate_board(function):
         return function(number)
     return wrapper
 
-@validate_board
+@validate_number
+def is_prime(number):
+
+    if number == 1:
+        return False
+    elif number == 2 or number == 3:
+        return True
+    else:
+        if number % 2 == 0 or number % 3 == 0:
+            return False
+        else:
+            return True
+
+
+@validate_number
 def prime_factors(number):
     
-    if isprime(number):
+    if is_prime(number):
         result = [number]
         return result
     else:
         result = []
         number_remainder = number
-        for i in range(floor(sqrt(number)+1)):
+        for i in range(math.floor(math.sqrt(number)+1)):
             j=i+1
-            if isprime(j):
+            if is_prime(j):
                 while number_remainder % j == 0:
                     result.append(j)
-                    number_remainder = floor(number_remainder / j)
+                    number_remainder = number_remainder//j
                 if j > number_remainder:
                     break
         if number_remainder > 1:
