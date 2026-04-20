@@ -100,6 +100,30 @@ def test_is_prime_6k():
     expected = False
     assert result == expected, f'Expected {expected}, got {result}'
 
+def test_big_prime_number_is_prime():
+    prime_number = 479001599 #source: https://oeis.org/A088054
+    result = is_prime(prime_number)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_very_big_prime_number_is_prime():
+    prime_number = 63018038201 #source: https://oeis.org/A088165
+    result = is_prime(prime_number)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_large_prime_number_is_prime():
+    prime_number = 489133282872437279 #source: https://oeis.org/A088165
+    result = is_prime(prime_number)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_very_very_large_prime_number_is_prime():
+    prime_number = 19134702400093278081449423917 #source: https://oeis.org/A005478
+    result = is_prime(prime_number)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
 def test_non_int_type_is_prime():
     try:
         is_prime([3])
@@ -223,7 +247,17 @@ def test_big_prime_number_prime_factors():
     result = prime_factors(prime_number)
     assert result == [prime_number], f'Expected [{prime_number}], got {result}'
 
+def test_very_big_prime_number_prime_factors():
+    prime_number = 63018038201 #source: https://oeis.org/A088054
+    result = prime_factors(prime_number)
+    assert result == [prime_number], f'Expected [{prime_number}], got {result}'
+
 def test_large_prime_number_prime_factors():
+    prime_number = 489133282872437279 #source: https://oeis.org/A088165
+    result = prime_factors(prime_number)
+    assert result == [prime_number], f'Expected [{prime_number}], got {result}'
+
+def test_very_very_large_prime_number_prime_factors():
     prime_number = 19134702400093278081449423917 #source: https://oeis.org/A005478
     result = prime_factors(prime_number)
     assert result == [prime_number], f'Expected [{prime_number}], got {result}'
@@ -290,6 +324,10 @@ if __name__ == '__main__':
         test_is_prime_6k_4,
         test_is_prime_6k_5_prime,
         test_is_prime_6k_1_non_prime,
+        test_very_big_prime_number_is_prime,
+        test_big_prime_number_is_prime,
+        #test_large_prime_number_is_prime,
+        #test_very_very_large_prime_number_is_prime,
         test_is_prime_0,
         test_is_prime_1,
         test_none_is_prime,
@@ -301,13 +339,15 @@ if __name__ == '__main__':
         test_prime_factors_4,
         test_prime_factors_9,
         test_prime_factors_6, 
-        test_non_prime_non_divisible_by_2_or_3_prime_factors,               
+        test_non_prime_non_divisible_by_2_or_3_prime_factors,
         test_prime_power_number_prime_factors,
         test_semiprime_number_prime_factors,
         test_two_prime_factors_power_number_prime_factors,
         test_three_prime_factors_power_number_prime_factors,
         test_big_prime_number_prime_factors,
+        test_very_big_prime_number_prime_factors,
         #test_large_prime_number_prime_factors,
+        #test_very_very_large_prime_number_prime_factors,
         test_non_int_type_prime_factors,
         test_zero_number_prime_factors,
         test_one_number_prime_factors,

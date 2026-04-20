@@ -34,12 +34,12 @@ def is_prime(number):
         #since it is not divisible by 3, it is not of the form 6k + 3
         #this leaves 6k + 1 and 6k + 5 (or 6k - 1)
         if number % 6 == 1 or number % 6 == 5:
-            m = 2
-            #we can only check for factors up to sqrt(number)
-            while m <= math.sqrt(number):
-                if number % m == 0:
+            #we can also only look for factors among numbers 6k +- 1
+            k = 1
+            while (6*k-1)*(6*k-1) <= number:
+                if number % (6*k - 1)  == 0 or number % (6*k + 1) == 0:
                     return False
-                m += 1
+                k += 1
             return True
         else:
             return False
