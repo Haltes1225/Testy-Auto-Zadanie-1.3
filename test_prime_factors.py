@@ -42,6 +42,63 @@ def test_is_prime_25():
     expected = False
     assert result == expected, f'Expected {expected}, got {result}'
 
+def test_is_prime_7():
+    result = is_prime(7)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_49():
+    result = is_prime(49)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_semiprime_number_is_prime():
+    prime_number_1 = 3
+    prime_number_2 = 17
+    test_number = int(floor(prime_number_1 * prime_number_2))
+    expected = False
+    result = is_prime(test_number)
+    assert expected == result, f'Expected {expected}, got {result}'
+
+def test_non_int_type_is_prime():
+    try:
+        is_prime([3])
+        assert False, 'TypeError expected'
+    except TypeError:
+        pass
+
+def test_is_prime_0():
+    try:
+        is_prime(0)
+        assert False, 'ValueError expected'
+    except ValueError:
+        pass
+
+def test_is_prime_1():
+    result = is_prime(1)
+    assert result == None, f'Expected None, got {result}'
+
+def test_negative_number_is_prime():
+    try:
+        is_prime(-2)
+        assert False, 'ValueError expected'
+    except ValueError:
+        pass
+
+def test_none_is_prime():
+    try:
+        prime_factors(None)
+        assert False, 'TypeError expected'
+    except TypeError:
+        pass
+
+def test_empty_is_prime():
+    try:
+        is_prime()
+        assert False, 'TypeError expected'
+    except TypeError:
+        pass
+
 def test_import_prime_factors():
     try:
         from prime_factors import prime_factors
@@ -176,7 +233,15 @@ if __name__ == '__main__':
         test_is_prime_9,
         test_is_prime_6,
         test_is_prime_5,
-        test_is_prime_25
+        test_is_prime_25,
+        test_is_prime_7,
+        test_is_prime_49,
+        test_semiprime_number_is_prime,
+        test_is_prime_0,
+        test_is_prime_1,
+        test_none_is_prime,
+        test_empty_is_prime,
+        test_negative_number_is_prime
     ):
         """
         test_import_prime_factors,
