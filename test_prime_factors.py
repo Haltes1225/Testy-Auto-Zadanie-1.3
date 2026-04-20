@@ -17,22 +17,28 @@ def test_prime_number_prime_factors_3():
     result = prime_factors(prime_number)
     assert result == [prime_number], f'Expected [{prime_number}], got {result}'
 
-def test_prime_number_prime_factors_4():
-    prime_number = 4
-    result = prime_factors(prime_number)
+def test_prime_factors_4():
+    number = 4
+    result = prime_factors(number)
     expected = [2,2]
     assert result == [2,2], f'Expected {expected}, got {result}'
 
-def test_prime_number_prime_factors_9():
-    prime_number = 9
-    result = prime_factors(prime_number)
+def test_prime_factors_9():
+    number = 9
+    result = prime_factors(number)
     expected = [3,3]
     assert result == expected, f'Expected {expected}, got {result}'
 
-def test_prime_number_prime_factors_6():
-    prime_number = 6
-    result = prime_factors(prime_number)
+def test_prime_factors_6():
+    number = 6
+    result = prime_factors(number)
     expected = [2,3]    
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_non_prime_non_divisible_by_2_or_3_prime_factors():
+    number = 25
+    result = prime_factors(number)
+    expected = [5,5]
     assert result == expected, f'Expected {expected}, got {result}'
 
 def test_prime_power_number_prime_factors():
@@ -123,9 +129,10 @@ if __name__ == '__main__':
         test_import_prime_factors,
         test_prime_number_prime_factors_2,
         test_prime_number_prime_factors_3,
-        test_prime_number_prime_factors_4,
-        test_prime_number_prime_factors_9,
-        test_prime_number_prime_factors_6,                
+        test_prime_factors_4,
+        test_prime_factors_9,
+        test_prime_factors_6, 
+        test_non_prime_non_divisible_by_2_or_3_prime_factors,               
         test_prime_power_number_prime_factors,
         test_semiprime_number_prime_factors,
         test_two_prime_factors_power_number_prime_factors,
