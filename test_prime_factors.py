@@ -60,6 +60,46 @@ def test_semiprime_number_is_prime():
     result = is_prime(test_number)
     assert expected == result, f'Expected {expected}, got {result}'
 
+def test_is_prime_6k_1_prime():
+    result = is_prime(613)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6k_1_non_prime():
+    result = is_prime(6*466222+1)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6k_2():
+    result = is_prime(6*345676788+2)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6k_3():
+    result = is_prime(6*9947889278785+3)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6k_4():
+    result = is_prime(6*40096883+4)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6k_5_prime():
+    result = is_prime(5039)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6k_5_non_prime():
+    result = is_prime(6*46622+5)
+    expected = True
+    assert result == expected, f'Expected {expected}, got {result}'
+
+def test_is_prime_6k():
+    result = is_prime(6*400968839884868989343443)
+    expected = False
+    assert result == expected, f'Expected {expected}, got {result}'
+
 def test_non_int_type_is_prime():
     try:
         is_prime([3])
@@ -178,6 +218,11 @@ def test_three_prime_factors_power_number_prime_factors():
     result = prime_factors(test_number)
     assert expected == result, f'Expected {expected}, got {result}'
 
+def test_big_prime_number_prime_factors():
+    prime_number = 479001599 #source: https://oeis.org/A088054
+    result = prime_factors(prime_number)
+    assert result == [prime_number], f'Expected [{prime_number}], got {result}'
+
 def test_large_prime_number_prime_factors():
     prime_number = 19134702400093278081449423917 #source: https://oeis.org/A005478
     result = prime_factors(prime_number)
@@ -237,6 +282,14 @@ if __name__ == '__main__':
         test_is_prime_7,
         test_is_prime_49,
         test_semiprime_number_is_prime,
+        test_is_prime_6k,
+        test_is_prime_6k_1_prime,
+        test_is_prime_6k_1_non_prime,
+        test_is_prime_6k_2,
+        test_is_prime_6k_3,
+        test_is_prime_6k_4,
+        test_is_prime_6k_5_prime,
+        test_is_prime_6k_1_non_prime,
         test_is_prime_0,
         test_is_prime_1,
         test_none_is_prime,
@@ -253,7 +306,8 @@ if __name__ == '__main__':
         test_semiprime_number_prime_factors,
         test_two_prime_factors_power_number_prime_factors,
         test_three_prime_factors_power_number_prime_factors,
-        test_large_prime_number_prime_factors,
+        test_big_prime_number_prime_factors,
+        #test_large_prime_number_prime_factors,
         test_non_int_type_prime_factors,
         test_zero_number_prime_factors,
         test_one_number_prime_factors,

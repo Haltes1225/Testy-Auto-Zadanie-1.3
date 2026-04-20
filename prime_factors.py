@@ -23,18 +23,26 @@ def is_prime(number):
 
     if number == 1:
         return False
-    elif number == 2 or number == 3:
-        return True
-    else:
-        if number % 2 == 0 or number % 3 == 0:
-            return False
+    elif number % 2 == 0 or number % 3 == 0:
+        if number == 2 or number == 3:
+            return True
         else:
+            return False
+    else:
+        #since number is non divisible by 2 or 3, it is not divisible by 6, so it is not of the form 6k, where k is natural
+        #since it is not divisible by 2, it is not of the form 6k + 2 or 6k + 4
+        #since it is not divisible by 3, it is not of the form 6k + 3
+        #this leaves 6k + 1 and 6k + 5 (or 6k - 1)
+        if number % 6 == 1 or number % 6 == 5:
             m = 2
-            while m < number:
+            #we can only check for factors up to sqrt(number)
+            while m <= math.sqrt(number):
                 if number % m == 0:
                     return False
                 m += 1
             return True
+        else:
+            return False
 
 @validate_number
 def prime_factors(number):
